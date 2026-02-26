@@ -10,7 +10,12 @@
     <link id="-gd-engine-icon" rel="icon" type="image/png" href="buckshot-roulette.icon.png" />
     <link rel="apple-touch-icon" href="buckshot-roulette.apple-touch-icon.png" />
 </head>
-
+<script>
+  // Redirect to HTTPS if not secure, except on localhost
+  if (location.protocol !== 'https:' && location.hostname !== 'localhost') {
+      location.href = location.href.replace(/^http:/, 'https:');
+  }
+</script>
 <body>
     <script src="main.js"></script>
     <div id="loading-text" style="color: white; font-family: cursive; font-size: 48px; text-align: center; margin-top: 20px;">LOADING...</div>
@@ -140,5 +145,6 @@
         window.godotRunStart = run;
     </script>
 </body>
+
 
 </html>
